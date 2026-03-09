@@ -3,11 +3,15 @@ import { CategoryStrip } from "@/components/CategoryStrip";
 import { ProductTileCard } from "@/components/ProductTile";
 
 export default async function HomePage() {
-  const [categories, featured, newest] = await Promise.all([
+  const [categoriesRes, featuredRes, newestRes] = await Promise.all([
     api.categories(),
     api.homeFeatured(),
     api.homeNewest(),
   ]);
+
+  const categories = categoriesRes.data;
+  const featured = featuredRes.data;
+  const newest = newestRes.data;
 
   return (
     <main className="space-y-10">

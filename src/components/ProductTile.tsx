@@ -11,15 +11,20 @@ export function ProductTileCard({ p }: { p: ProductTile }) {
   return (
     <Link
       href={`/p/${p.slug}`}
-      className="group block rounded-2xl border bg-white p-3 hover:bg-neutral-50"
-    >
+      className="group block rounded-2xl border bg-white p-3 hover:bg-neutral-50">
       <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-100">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={p.mainImage ?? ""}
-          alt={p.name}
-          className="h-full w-full object-cover"
-        />
+        {p.mainImage ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={p.mainImage ?? ""}
+            alt={p.name}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center text-sm text-neutral-400">
+            No Image
+          </div>
+        )}
       </div>
 
       <div className="mt-3 space-y-1">

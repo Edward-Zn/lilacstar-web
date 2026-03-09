@@ -33,7 +33,9 @@ export default async function CategoryPage({
               href={`/c/${params.slug}?sort=${s.key}`}
               className={[
                 "rounded-full border px-3 py-1",
-                sort === s.key ? "bg-neutral-900 text-white" : "bg-white hover:bg-neutral-50",
+                sort === s.key
+                  ? "bg-neutral-900 text-white"
+                  : "bg-white hover:bg-neutral-50",
               ].join(" ")}>
               {s.label}
             </Link>
@@ -48,8 +50,10 @@ export default async function CategoryPage({
       </div>
 
       <div className="text-sm text-neutral-600">
-        Page {data.meta.current_page} of {data.meta.last_page} — Total: {data.meta.total}
+        Page {data.meta.current_page} of {data.meta.last_page} — Total:{" "}
+        {data.meta.total}
       </div>
     </main>
   );
 }
+

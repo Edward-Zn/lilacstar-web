@@ -8,8 +8,7 @@ export function CategoryStrip({ categories }: { categories: Category[] }) {
         <Link
           key={c.id}
           href={`/c/${c.slug}`}
-          className="shrink-0 rounded-xl border bg-white px-3 py-2 text-sm font-medium hover:bg-neutral-50"
-        >
+          className="shrink-0 rounded-xl border bg-white px-3 py-2 text-sm font-medium hover:bg-neutral-50">
           {c.name}
         </Link>
       ))}

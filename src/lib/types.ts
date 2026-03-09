@@ -43,6 +43,10 @@ export type Product = {
   images: ProductImage[];
 };
 
+export type CollectionResponse<T> = {
+  data: T[];
+};
+
 export type Paginated<T> = {
   data: T[];
   links: {

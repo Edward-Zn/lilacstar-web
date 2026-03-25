@@ -1,4 +1,4 @@
-import type { Category, Paginated, Product, ProductTile } from "./types";
+import type { Category, CollectionResponse, Paginated, Product, ProductTile } from "./types";
 
 const API = process.env.NEXT_PUBLIC_API_URL;
 
@@ -25,11 +25,13 @@ async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export const api = {
-  categories: () => apiFetch<Category[]>("/api/categories"),
-  homeFeatured: () => apiFetch<ProductTile[]>("/api/home/featured"),
-  homeNewest: () => apiFetch<ProductTile[]>("/api/home/newest"),
+  categories: () => apiFetch<CollectionResponse<Category>>("/api/categories"),
+  homeFeatured: () => apiFetch<CollectionResponse<ProductTile>>("/api/home/featured"),
+  homeNewest: () => apiFetch<CollectionResponse<ProductTile>>("/api/home/newest"),
   categoryProducts: (slug: string, sort: string) =>
-    apiFetch<Paginated<ProductTile>>(`/api/categories/${encodeURIComponent(slug)}/products?sort=${encodeURIComponent(sort)}`),
+    apiFetch<Paginated<ProductTile>>(
+      `/api/categories/${encodeURIComponent(slug)}/products?sort=${encodeURIComponent(sort)}`
+    ),
   product: (slug: string) =>
     apiFetch<Product>(`/api/products/${encodeURIComponent(slug)}`),
 };

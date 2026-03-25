@@ -32,7 +32,7 @@ export default async function ProductPage({
       </header>
 
       <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
-        <section className="rounded-2xl border bg-white p-3">
+        <section className="rounded-sm border bg-white p-3 shadow-md">
           <div className="aspect-[4/3] overflow-hidden rounded-xl bg-neutral-100">
             {main?.url ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -69,7 +69,7 @@ export default async function ProductPage({
           )}
         </section>
 
-        <aside className="space-y-4 rounded-2xl border bg-white p-4">
+        <aside className="space-y-4 rounded-sm border bg-white p-4 shadow-md">
           <div className="text-xl font-bold">
             {formatPrice(p.price, p.currency)}
           </div>
@@ -95,4 +95,6 @@ export default async function ProductPage({
     </main>
   );
 }
+
+
 

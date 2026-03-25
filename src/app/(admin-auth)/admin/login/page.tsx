@@ -40,10 +40,10 @@ export default function AdminLoginPage() {
 
   return (
     <main className="mx-auto max-w-md py-10">
-      <div className="rounded-2xl border bg-white p-6 shadow-sm">
+      <div className="rounded-sm border bg-white p-6 shadow-sm">
         <h1 className="text-2xl font-bold tracking-tight">Admin login</h1>
         <p className="mt-1 text-sm text-neutral-600">
-          Sign in to manage {process.env.APP_NAME} catalog.
+          Sign in to manage {process.env.NEXT_PUBLIC_APP_NAME} catalog
         </p>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
@@ -84,4 +84,5 @@ export default function AdminLoginPage() {
     </main>
   );
 }
+
 

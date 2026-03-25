@@ -11,7 +11,7 @@ export function ProductTileCard({ p }: { p: ProductTile }) {
   return (
     <Link
       href={`/p/${p.slug}`}
-      className="group block rounded-2xl border bg-white p-3 hover:bg-neutral-50">
+      className="group block rounded-sm border bg-white p-3 hover:bg-neutral-50 shadow-md">
       <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-100">
         {p.mainImage ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -42,3 +42,4 @@ export function ProductTileCard({ p }: { p: ProductTile }) {
     </Link>
   );
 }
+

@@ -1,14 +1,18 @@
 import "./globals.css";
 import Link from "next/link";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className="min-h-dvh">
         <div className="mx-auto w-full max-w-6xl px-4 py-4">
           <header className="mb-6 flex items-center justify-between gap-4">
             <Link href="/" className="text-xl font-bold tracking-tight">
-              {process.env.APP_NAME}
+              {process.env.NEXT_PUBLIC_APP_NAME}
             </Link>
 
             <nav className="flex items-center gap-4 text-sm">
@@ -24,12 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
 
           <footer className="mt-12 border-t pt-6 text-sm text-neutral-500">
-            © {new Date().getFullYear()} {process.env.APP_NAME}
+            © {new Date().getFullYear()} {process.env.NEXT_PUBLIC_APP_NAME}
           </footer>
         </div>
       </body>
     </html>
   );
-
-
 }
+
+

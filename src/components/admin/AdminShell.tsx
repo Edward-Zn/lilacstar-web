@@ -58,7 +58,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="grid gap-6 lg:grid-cols-[220px_1fr]">
-      <aside className="rounded-2xl border bg-white p-4">
+      <aside className="rounded-sm border bg-white p-4 shadow-md">
         <div className="mb-4">
           <div className="text-sm text-neutral-500">Signed in as</div>
           <div className="font-semibold">{userName}</div>
@@ -93,3 +93,4 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+
